@@ -22,7 +22,14 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.1"
-
+    signingConfigs {
+        config {
+            keyAlias 'udacity'
+            keyPassword 'password'
+            storeFile file("$rootDir/keystore.jks")
+            storePassword 'password'
+        }
+    }
     defaultConfig {
         applicationId "com.udacity.gradle.automaticsigning"
         minSdkVersion 15
